@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>As melhores aulas estão com Geovanny G.K.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .topo {
+            background: #1877f2;
+            color: white;
+            padding: 15px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .capa {
+            width: 100%;
+            max-width: 1100px;
+            height: 330px;
+            margin: 0 auto;
+            background-image: url("/static/capa.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .conteudo {
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+
+        .cartao {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            background: #1877f2;
+            font-weight: bold;
+        }
+
+        .botao.cadastro {
+            background: #42b72a;
+        }
+
+        .cursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .curso {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .curso h3 {
+            margin-bottom: 8px;
+        }
+
+        .curso p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .capa {
+                height: 220px;
+                border-radius: 0;
+            }
+
+            .topo {
+                font-size: 18px;
+            }
+
+            .cartao {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topo">
+        Geovanny G.K.
+    </div>
+
+    <div class="capa"></div>
+
+    <main class="conteudo">
+
+        <section class="cartao">
+            <h1>As melhores aulas estão com Geovanny G.K.</h1>
+
+            <p>
+                Aprende cursos técnicos e profissionais
+                num único lugar.
+            </p>
+
+            <div class="botoes">
+                <a class="botao" href="{{ url_for('login') }}">
+                    Entrar
+                </a>
+
+                <a class="botao cadastro" href="{{ url_for('cadastro') }}">
+                    Criar conta
+                </a>
+            </div>
+        </section>
+
+        <section class="cartao">
+            <h2>Cursos disponíveis</h2>
+
+            <br>
+
+            <div class="cursos">
+
+                <div class="curso">
+                    <h3>Construção Civil</h3>
+                    <p>Aprende conhecimentos fundamentais da construção.</p>
+                </div>
+
+                <div class="curso">
+                    <h3>Desenho e Projeto</h3>
+                    <p>Aprende desenho técnico e elaboração de projetos.</p>
+                </div>
+
+                <div class="curso">
+                    <h3>Topografia</h3>
+                    <p>Conhecimentos de levantamento e representação do terreno.</p>
+                </div>
+
+                <div class="curso">
+                    <h3>Informática</h3>
+                    <p>Aprende informática e ferramentas digitais.</p>
+                </div>
+
+                <div class="curso">
+                    <h3>Programação</h3>
+                    <p>Introdução ao desenvolvimento de aplicações e sites.</p>
+                </div>
+
+                <div class="curso">
+                    <h3>Eletricidade</h3>
+                    <p>Conhecimentos básicos de instalações elétricas.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
