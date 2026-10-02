@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos - Geovanny G.K.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .topo {
+            background: #1877f2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .sair {
+            background: white;
+            color: #1877f2;
+            padding: 9px 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .capa {
+            width: 100%;
+            max-width: 1100px;
+            height: 280px;
+            margin: auto;
+            background-image: url("/static/capa.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .conteudo {
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+
+        .perfil {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .perfil h1 {
+            margin-bottom: 8px;
+        }
+
+        .perfil p {
+            color: #65676b;
+        }
+
+        .titulo {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+        }
+
+        .curso {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .curso:hover {
+            transform: translateY(-3px);
+        }
+
+        .curso h3 {
+            color: #1877f2;
+            margin-bottom: 10px;
+        }
+
+        .curso p {
+            color: #65676b;
+            line-height: 1.5;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
+            background: #1877f2;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .capa {
+                height: 210px;
+                border-radius: 0;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .topo {
+                padding: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="logo">
+            Geovanny G.K.
+        </div>
+
+        <a class="sair" href="{{ url_for('sair') }}">
+            Sair
+        </a>
+    </header>
+
+    <div class="capa"></div>
+
+    <main class="conteudo">
+
+        <section class="perfil">
+            <h1>Olá, {{ nome }}! 👋🏽</h1>
+
+            <p>
+                Bem-vindo à plataforma de cursos técnicos
+                e profissionais do Geovanny G.K.
+            </p>
+        </section>
+
+        <section class="titulo">
+            <h2>📚 Cursos técnicos e profissionais</h2>
+        </section>
+
+        <section class="cursos">
+
+            <article class="curso">
+                <h3>Construção Civil</h3>
+                <p>
+                    Fundamentos, materiais, estruturas e técnicas
+                    de construção.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Desenho e Projeto</h3>
+                <p>
+                    Desenho técnico, leitura de projetos e
+                    elaboração de plantas.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Desenho Técnico</h3>
+                <p>
+                    Técnicas de representação gráfica e
+                    interpretação de desenhos.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Topografia</h3>
+                <p>
+                    Medição, levantamento e representação
+                    de terrenos.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Arquitetura</h3>
+                <p>
+                    Conceitos de projeto, espaços, plantas
+                    e representação arquitetónica.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Informática</h3>
+                <p>
+                    Computadores, sistemas operativos,
+                    ferramentas digitais e produtividade.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Programação</h3>
+                <p>
+                    Lógica de programação, desenvolvimento
+                    web e criação de aplicações.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Eletricidade</h3>
+                <p>
+                    Instalações elétricas, circuitos e
+                    fundamentos de eletrotecnia.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Eletrónica</h3>
+                <p>
+                    Componentes, circuitos eletrónicos e
+                    princípios de eletrónica.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Mecânica Auto</h3>
+                <p>
+                    Manutenção, diagnóstico e funcionamento
+                    de veículos.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Contabilidade</h3>
+                <p>
+                    Fundamentos de contabilidade, registos
+                    e organização financeira.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Gestão</h3>
+                <p>
+                    Administração, organização e gestão
+                    de empresas.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Enfermagem</h3>
+                <p>
+                    Fundamentos de enfermagem e cuidados
+                    básicos de saúde.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Farmácia</h3>
+                <p>
+                    Introdução à área farmacêutica e
+                    conhecimentos profissionais.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Hotelaria e Turismo</h3>
+                <p>
+                    Atendimento, turismo, hotelaria e
+                    serviços de hospitalidade.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Canalização</h3>
+                <p>
+                    Instalação e manutenção de sistemas
+                    hidráulicos.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>Refrigeração e Climatização</h3>
+                <p>
+                    Sistemas de refrigeração, climatização
+                    e manutenção.
+                </p>
+                <a class="botao" href="#">Ver curso</a>
+            </article>
+
+            <article class="curso">
+                <h3>
