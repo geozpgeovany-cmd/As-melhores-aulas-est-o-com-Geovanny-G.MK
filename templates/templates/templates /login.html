@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Geovanny G.K.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .caixa {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #606770;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #ccd0d5;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #1877f2;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #166fe5;
+        }
+
+        .erro {
+            background: #ffe5e5;
+            color: #b00020;
+            padding: 10px;
+            border-radius: 7px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .criar {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #42b72a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .inicio {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="caixa">
+
+        <h1>Geovanny G.K.</h1>
+
+        <p class="subtitulo">
+            Entra na tua conta
+        </p>
+
+        {% if mensagem %}
+            <div class="erro">
+                {{ mensagem }}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+
+            <label for="username">
+                Nome de utilizador
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Nome de utilizador"
+                required
+            >
+
+            <label for="password">
+                Palavra-passe
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Palavra-passe"
+                required
+            >
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+        <a class="criar" href="{{ url_for('cadastro') }}">
+            Criar uma nova conta
+        </a>
+
+        <a class="inicio" href="{{ url_for('inicio') }}">
+            Voltar para a página inicial
+        </a>
+
+    </div>
+
+</body>
+</html>
