@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta - Geovanny G.K.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .caixa {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #606770;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd0d5;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #42b72a;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #36a420;
+        }
+
+        .erro {
+            background: #ffe5e5;
+            color: #b00020;
+            padding: 10px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .voltar {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="caixa">
+
+        <h1>Criar conta</h1>
+
+        <p class="subtitulo">
+            Cria a tua conta no Geovanny G.K.
+        </p>
+
+        {% if mensagem %}
+            <div class="erro">
+                {{ mensagem }}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+
+            <label for="nome">Nome completo</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite o seu nome completo"
+                required
+            >
+
+            <label for="nascimento">Data de nascimento</label>
+            <input
+                type="date"
+                id="nascimento"
+                name="nascimento"
+                required
+            >
+
+            <label for="genero">Género</label>
+            <select id="genero" name="genero" required>
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+                <option value="Prefiro não informar">
+                    Prefiro não informar
+                </option>
+            </select>
+
+            <label for="telefone_email">Telefone ou e-mail</label>
+            <input
+                type="text"
+                id="telefone_email"
+                name="telefone_email"
+                placeholder="Telefone ou e-mail"
+                required
+            >
+
+            <label for="username">Nome de utilizador</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Crie um nome de utilizador"
+                required
+            >
+
+            <label for="password">Palavra-passe</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Crie uma palavra-passe"
+                minlength="6"
+                required
+            >
+
+            <label for="confirmar">Confirmar palavra-passe</label>
+            <input
+                type="password"
+                id="confirmar"
+                name="confirmar"
+                placeholder="Repita a palavra-passe"
+                minlength="6"
+                required
+            >
+
+            <button type="submit">
+                Criar conta
+            </button>
+
+        </form>
+
+        <a class="voltar" href="{{ url_for('inicio') }}">
+            Voltar para a página inicial
+        </a>
+
+    </div>
+
+</body>
+</html>
